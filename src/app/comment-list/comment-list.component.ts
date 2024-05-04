@@ -13,8 +13,10 @@ import { UserService } from '../user-service';
 export class CommentListComponent {
   userService = inject(UserService);
   router = inject(ActivatedRoute);
+  commentId: any;
   comments$ = this.router.paramMap.pipe(
     switchMap((value) => {
+      this.commentId = value.get('id');
       return this.userService.getComments(value.get('id'));
     })
   );
