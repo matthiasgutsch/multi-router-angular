@@ -1,0 +1,12 @@
+<section class="user-list">
+  <h1>User List</h1>
+  <div>
+    <ul>
+      <li *ngFor="let user of (users$|async)">
+        <button [routerLink]="['',{outlets:{post:['post',user.id]}}]">
+          {{user.name}}
+        </button>
+      </li>
+    </ul>
+  </div>
+</section>
