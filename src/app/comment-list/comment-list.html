@@ -1,5 +1,10 @@
 <section class="comment-list">
+
+  <a [routerLink]="['', { outlets: { post:['8'], comment:null } }]">Edit</a>
+
   <h1>Comments</h1>
+
+
   <div *ngIf="comments$|async as comments">
     <ul *ngFor="let comment of comments">
       <li>

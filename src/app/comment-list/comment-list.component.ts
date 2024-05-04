@@ -1,6 +1,6 @@
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { UserService } from '../user-service';
 
@@ -8,7 +8,7 @@ import { UserService } from '../user-service';
   standalone: true,
   templateUrl: './comment-list.html',
   styleUrls: ['./comment-list.css'],
-  imports: [NgFor, NgIf, AsyncPipe],
+  imports: [NgFor, NgIf, AsyncPipe, RouterLink],
 })
 export class CommentListComponent {
   userService = inject(UserService);
