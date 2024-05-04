@@ -20,7 +20,7 @@ export const routes: Routes = [
       },
 
       {
-        path: 'comment/:id',
+        path: 'comment/:id/:userId',
         outlet: 'comment',
         loadComponent: () =>
           import('./comment-list/comment-list.component').then(
