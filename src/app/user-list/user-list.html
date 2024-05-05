@@ -2,9 +2,9 @@
   <div>
     <ul>
       <li *ngFor="let user of (users$|async)">
-        <button [routerLink]="['',{outlets:{post:['post',user.id]}}]">
+        <a [routerLink]="['',{outlets:{post:['post',user.id], comment:null}}]">
           {{user.name}}
-        </button>
+        </a>
       </li>
     </ul>
   </div>

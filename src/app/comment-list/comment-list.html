@@ -1,11 +1,12 @@
 <section class="comment-list">
 
-  <a [routerLink]="['',{outlets:{post:['post',userId], comment:null}}]">Edit</a>
+
+  <div *ngIf="comments$|async as comments">
+    
+  <a [routerLink]="['',{outlets:{post:['post',userId], comment:null}}]">close</a>
 
   <h1>Comments</h1>
 
-
-  <div *ngIf="comments$|async as comments">
     <ul *ngFor="let comment of comments">
       <li>
         <div>{{comment.name}}</div>
@@ -13,4 +14,10 @@
       </li>
     </ul>
   </div>
+
+  <div *ngIf="!comments$">
+    no comments
+sdsddsdsdd
+  </div>
 </section>
+
